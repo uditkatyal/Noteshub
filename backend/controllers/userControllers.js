@@ -37,6 +37,7 @@ exports.registerUser = async (req, res) => {
 
 exports.authUser = async (req, res) => {
   try {
+    console.log("login backend wala");
     const { email, password } = req.body;
     const user = await User.findOne({ email });
     if (user && (await user.matchPassword(password))) {
