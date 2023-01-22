@@ -44,7 +44,9 @@ const UpdatePage = () => {
       //     }
       // }
       console.log("Fetching data");
-      const { data } = await axios.get(`/api/notes/${id}`);
+      const { data } = await axios.get(
+        `${process.env.REACT_APP_BASE_URL}/api/notes/${id}`
+      );
       console.log(data);
       setTitle(data.note.title);
       setContent(data.note.content);
