@@ -6,14 +6,13 @@ const userRouter = require("./routes/userRoutes");
 const noteRouter = require("./routes/noteRoutes");
 
 const app = express();
-const cors = require("cors");
+// const cors = require("cors");
 dotenv.config();
 
 connectDB();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
 
 app.use("/api/users", userRouter);
 app.use("/api/notes", noteRouter);
