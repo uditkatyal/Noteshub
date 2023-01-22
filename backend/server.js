@@ -8,11 +8,12 @@ const noteRouter = require("./routes/noteRoutes");
 const app = express();
 const cors = require("cors");
 dotenv.config();
-app.use(cors());
+
 connectDB();
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(cors());
 
 app.use("/api/users", userRouter);
 app.use("/api/notes", noteRouter);
