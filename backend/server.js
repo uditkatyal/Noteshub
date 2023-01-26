@@ -37,18 +37,18 @@ app.use("/api/notes", noteRouter);
 //   });
 // });
 
-if (process.env.NODE_ENV === "production") {
-  // Set build folder as static
-  app.use(express.static(path.join(__dirname, "../frontend/build")));
+// if (process.env.NODE_ENV === "production") {
+//   // Set build folder as static
+//   app.use(express.static(path.join(__dirname, "../frontend/build")));
 
-  app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
-  });
-} else {
-  app.get("/", (req, res) => {
-    res.status(200).json({ message: "Welcome to the Noteshub" });
-  });
-}
+//   app.get("*", (req, res) => {
+//     res.sendFile(path.join(__dirname, "../frontend/build/index.html"));
+//   });
+// } else {
+//   app.get("/", (req, res) => {
+//     res.status(200).json({ message: "Welcome to the Noteshub" });
+//   });
+// }
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, (req, res) => {
