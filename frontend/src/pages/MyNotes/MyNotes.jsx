@@ -99,13 +99,15 @@ const MyNotes = ({ search }) => {
                       </Card.Header>
                     </Accordion.Header>
                     <div style={{ margin: "10px" }}>
-                      <Button
-                        href={`note/${note._id}`}
-                        className="btn btn-primary"
-                        variant="info"
-                      >
-                        Edit
-                      </Button>
+                      <Link to={`/note/${note._id}`}>
+                        <Button
+                          // href={`note/${note._id}`}
+                          className="btn btn-primary"
+                          variant="info"
+                        >
+                          Edit
+                        </Button>
+                      </Link>
                       <span></span>
                       <Button
                         // href="/delete"
